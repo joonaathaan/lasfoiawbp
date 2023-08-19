@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-console.log('boop');
+
+console.log(process.argv[2]);
