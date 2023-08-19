@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { exec } from 'child_process';
+import { readdir } from 'fs';
 const execute  = (command) => {
     return exec(command, (error, stdout, stderr) => {
       if (error) {
@@ -14,5 +15,5 @@ const execute  = (command) => {
     });
 };
 
-execute('ls -a');
+readdir('./', console.log);
 console.log(process.argv[2]);
