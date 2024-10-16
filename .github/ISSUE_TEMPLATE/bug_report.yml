@@ -1,0 +1,38 @@
+name: Bug Report
+description: Report an issue with this package or any other packages in the repository.
+labels: [bug]
+body:
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: Detailed Description
+      description: Provide a comprehensive explanation of the issue.
+      placeholder: |
+        Steps to reproduce using the code sample below:
+        1. Perform action one
+        2. Execute action within the application
+        3. Observe the resulting behavior
+        4. Refer to the error logs provided
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment_details
+    attributes:
+      label: Environment Details
+      description: Specify the relevant versions, including your package version, runtime version, operating system, etc.
+      placeholder: |
+        - **Node.js:** 20.18.0 (`node --version`)
+        - **TypeScript:** 5.6.3 (`pnpm ls typescript` if applicable)
+        - **Operating System:** macOS Sequoia 15.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_information
+    attributes:
+      label: Additional Information
+      description: Any extra details you'd like to add.
+      placeholder: |
+        - Provide any other context or information here.
+        - Screenshots or error messages can be added if applicable.

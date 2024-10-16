@@ -1,0 +1,50 @@
+name: Feature Request
+description: Suggest an enhancement or new feature for this package or any other packages in the repository.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: Feature Description
+      description: Provide a detailed description of the feature you would like to see.
+      placeholder: |
+        - **Overview:** Briefly describe the feature.
+        - **Functionality:** Explain how the feature should work.
+        - **Use Cases:** Outline scenarios where this feature would be beneficial.
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefits
+      description: Explain the advantages or improvements this feature will bring.
+      placeholder: |
+        - Enhance user experience by...
+        - Improve performance by...
+        - Enable new capabilities such as...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_details
+    attributes:
+      label: Additional Details
+      description: Share any ideas, suggestions, or extra information related to the feature.
+      placeholder: |
+        - **Possible Implementation:** Describe how this feature could be implemented.
+        - **Dependencies:** Mention any dependencies or related features.
+        - **Potential Challenges:** Identify possible obstacles in implementation.
+        - **Additional Information:** Provide any other context or information here.
+        - **Mockups/Diagrams:** Include visual aids if applicable.
+    validations:
+      required: false
+
+  - type: checkbox
+    id: willing_to_contribute
+    attributes:
+      label: Willingness to Contribute
+      description: Would you be willing to work on implementing this feature?
+    options:
+      - label: Yes, I can contribute to this feature.
+        value: no
