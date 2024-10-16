@@ -31,6 +31,8 @@ jobs:
           cache: pnpm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      - name: Install dependencies
+        run: pnpm install
       - name: Publish package
         run: |
             pnpm --filter=${{ matrix.package }} run release --preid dev --skip-changelog
