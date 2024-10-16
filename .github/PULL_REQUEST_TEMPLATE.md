@@ -8,7 +8,7 @@ Thank you for contributing to this repository! Please ensure your pull request m
 
 Provide a brief overview of the changes and the context behind them.
 
-**Related Issue:**  
+**Related Issues:**  
 Closes #[issue_number]
 
 ---
