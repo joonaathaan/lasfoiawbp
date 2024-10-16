@@ -33,10 +33,15 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       - name: Install dependencies
         run: pnpm install
+        
       - name: Publish package
         run: |
-            pnpm --filter=${{ matrix.package }} run release --preid dev --skip-changelog
-            pnpm --filter=${{ matrix.package }} publish --provenance --no-git-checks --tag dev
+            pnpm --filter ${{ matrix.package }} run release \
+            --name "${{ matrix.package }}" \
+            --package-path "${{ matrix.folder }}" \
+            --preid dev \
+            --skip-changelog
+            pnpm --filter ${{ matrix.package }} publish --provenance --no-git-checks --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
   
