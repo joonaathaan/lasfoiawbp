@@ -1,0 +1,45 @@
+name: Publish Stable
+
+on:
+  push:
+    branches:
+      - stable
+
+jobs:
+  publish:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - package: 'lasfoiawbp'
+            folder: '.'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org/'
+          always-auth: true
+          cache: pnpm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Publish package
+        run: |
+            pnpm --filter ${{ matrix.package }} run release \
+            --name "${{ matrix.package }}" \
+            --package-path "${{ matrix.folder }}" \
+            pnpm --filter ${{ matrix.package }} publish --provenance --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
