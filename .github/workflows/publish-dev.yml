@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -58,6 +57,7 @@ jobs:
         id: commmit
         if: steps.publish.outcome == 'success'
         run: |
+          git remote set-url origin "https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/${{ github.repository }}.git"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add package.json pnpm-lock.yaml
