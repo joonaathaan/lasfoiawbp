@@ -11,8 +11,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - package: 'lasfoiawbp'
-            folder: '.'
+          - package: '@lasfoiawbp/test'
+            folder: 'packages/test'
 
     runs-on: ubuntu-latest
     steps:
@@ -37,13 +37,13 @@ jobs:
       - name: Publish package
         id: publish
         run: |
-          VERSION=$(pnpm --filter ${{ matrix.package }} version | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+(-[a-z]+\.[0-9]+)?')
+          VERSION=$(pnpm version -w ${{ matrix.package }}  | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+(-[a-z]+\.[0-9]+)?')
           echo "Current version: $VERSION"
           if [[ $VERSION == *-* ]]; then
-            pnpm --filter ${{ matrix.package }} version prerelease --no-git-tag-version --no-commit-hooks
+            pnpm version prerelease -w ${{ matrix.package }} --no-git-tag-version --no-commit-hooks
             echo "This version has a pre-identifier. Incrementing build number."
           else
-            pnpm --filter ${{ matrix.package }} version preminor --preid dev --no-git-tag-version --no-commit-hooks
+            pnpm version preminor --preid dev -w ${{ matrix.package }} --no-git-tag-version --no-commit-hooks
             echo "This is a stable version. Setting up dev version."
           fi
           pnpm --filter ${{ matrix.package }} publish --provenance --no-git-checks --tag dev
