@@ -7,6 +7,15 @@
   "files": [
     "index.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joonaathaan/lasfoiawbp.git"
+  },
+  "contributors": [],
+  "bugs": {
+    "url": "https://github.com/joonaathaan/lasfoiawbp/issues"
+  },
+  "homepage": "https://github.com/joonaathaan/lasfoiawbp#readme",
   "scripts": {
     "release": "cliff-jumper"
   },
