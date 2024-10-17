@@ -1,6 +1,6 @@
 {
   "name": "lasfoiawbp",
-  "version": "1.0.1-dev.0",
+  "version": "1.0.1-dev.1",
   "description": "",
   "main": "index.js",
   "exports": "./index.js",
