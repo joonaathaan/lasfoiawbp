@@ -39,7 +39,7 @@ jobs:
         run: |
             pnpm --filter ${{ matrix.package }} run release \
             --name "${{ matrix.package }}" \
-            --package-path "${{ matrix.folder }}" \
+            --package-path "${{ matrix.folder }}"
             pnpm --filter ${{ matrix.package }} publish --provenance --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
