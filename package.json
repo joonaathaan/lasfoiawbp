@@ -1,23 +1,16 @@
 {
   "name": "lasfoiawbp",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
   "main": "index.js",
-  "exports": "./index.js",
-  "files": [
-    "index.js"
-  ],
   "scripts": {
     "release": "cliff-jumper"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@favware/cliff-jumper": "^4.1.0",
-    "@favware/npm-deprecate": "^1.0.7"
-  },
-  "dependencies": {
+    "@favware/npm-deprecate": "^1.0.7",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0"
   }
