@@ -43,13 +43,22 @@ jobs:
       - name: Build Project
         run: pnpm --filter $${{ matrix.package }} build
 
-      - name: Release
-        id: 'release'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      - name: Publish package
+        id: release
         run: |
-          pnpm --filter $${{ matrix.package }} semantic-release
+          if [[ ${{ github.ref_name }} == stable ]]; then
+            pnpm --filter ${{ matrix.package }} dlx cliff-jumper \
+            --name "${{ matrix.package }}" \
+            --package-path "${{ matrix.folder }}"
+          else
+            pnpm --filter ${{ matrix.package }} dlx cliff-jumper \
+            --name "${{ matrix.package }}" \
+            --package-path "${{ matrix.folder }}"
+            --preid dev
+          fi
+          pnpm --filter ${{ matrix.package }} publish --provenance --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
       - name: Configure git, commit and push!
         id: commmit
