@@ -32,19 +32,13 @@ jobs:
           cache: pnpm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-      - name: Install dependencies
+      - name: Install Dependencies
         run: pnpm install
-      - name: Configure Git
-        run: | 
-          git remote set-url origin "https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/${{ github.repository }}.git"
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Publish package
-        run: |
-          pnpm --filter ${{ matrix.package }} run release \
-          --name "${{ matrix.package }}" \
-          --package-path "${{ matrix.folder }}" \
-          --commit-message-template "chore({{name}}): release {{full-name}}@{{new-version}} [skip ci]"
-          pnpm --filter ${{ matrix.package }} publish --provenance --no-git-checks
+      - name: Build Project
+        run: pnpm build
+
+      - name: Release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Provided by GitHub Actions
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+        run: npx semantic-release
