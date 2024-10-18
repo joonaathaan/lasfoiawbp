@@ -1,8 +1,12 @@
 {
-  "name": "lasfoiawbp",
+  "name": "@lasfoiawbp/test2",
   "version": "1.0.0",
   "description": "",
-  "private": true,
+  "main": "index.js",
+  "exports": "./index.js",
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joonaathaan/lasfoiawbp.git"
@@ -18,16 +22,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@favware/npm-deprecate": "^1.0.7",
-    "@semantic-release/changelog": "^6.0.3",
-    "husky": "^9.1.6",
-    "semantic-release": "^24.1.2"
-  },
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "dependencies": {
+    "@lasfoiawbp/test1": "workspace:^"
   }
 }

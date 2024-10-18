@@ -12,8 +12,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - package: 'lasfoiawbp'
-            folder: '.'
+          - package: '@lasfoiawbp/test1'
+            folder: 'packages/test1'
+          - package: '@lasfoiawbp/test2'
+            folder: 'packages/test2'
 
     runs-on: ubuntu-latest
     permissions:
@@ -44,7 +46,7 @@ jobs:
       - name: Release
         id: 'release'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Provided by GitHub Actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
         run: |
           pnpm semantic-release
@@ -56,5 +58,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "chore(release): release ${{matrix.package}}@$(pnpm version --json | jq -r '.${{ matrix.package }}') [skip ci]" || echo "No changes to commit"
+          git commit -m "chore: release ${{matrix.package}}@$(pnpm version --json | jq -r '.${{ matrix.package }}') [skip ci]" || echo "No changes to commit"
           git push
