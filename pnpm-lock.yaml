@@ -17,9 +17,6 @@ importers:
 
   packages/test1:
     devDependencies:
-      '@favware/cliff-jumper':
-        specifier: ^4.1.0
-        version: 4.1.0
       '@favware/npm-deprecate':
         specifier: ^1.0.7
         version: 1.0.7(encoding@0.1.13)
@@ -36,9 +33,6 @@ importers:
         specifier: workspace:^
         version: link:../test1
     devDependencies:
-      '@favware/cliff-jumper':
-        specifier: ^4.1.0
-        version: 4.1.0
       '@favware/npm-deprecate':
         specifier: ^1.0.7
         version: 1.0.7(encoding@0.1.13)
@@ -136,27 +130,6 @@ packages:
     resolution: {integrity: sha512-DSHae2obMSMkAtTBSOulg5X7/z+rGLxcXQIkg3OmWvY6wifojge5uVMydfhUvs7yQj+V7jNmRZ2Xzl8GJyqRgg==}
     engines: {node: '>=v18'}
 
-  '@conventional-changelog/git-client@1.0.1':
-    resolution: {integrity: sha512-PJEqBwAleffCMETaVm/fUgHldzBE35JFk3/9LL6NUA5EXa3qednu+UT6M7E5iBu3zIQZCULYIiZ90fBYHt6xUw==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      conventional-commits-filter: ^5.0.0
-      conventional-commits-parser: ^6.0.0
-    peerDependenciesMeta:
-      conventional-commits-filter:
-        optional: true
-      conventional-commits-parser:
-        optional: true
-
-  '@favware/cliff-jumper@4.1.0':
-    resolution: {integrity: sha512-z8U6XecZr3F7nkq2d+dg+QXaHcBh+DugUuVQGwIEo2vpAPOFkZ0Xnz3YbnTu0zPlr9lDEWL/rbnGEr0lwCaGOA==}
-    engines: {node: '>=v18'}
-    hasBin: true
-
-  '@favware/colorette-spinner@1.0.1':
-    resolution: {integrity: sha512-PPYtcLzhSafdylp8NBOxMCYIcLqTUMNiQc7ciBoAIvxNG2egM+P7e2nNPui5+Svyk89Q+Tnbrp139ZRIIBw3IA==}
-    engines: {node: '>=v16'}
-
   '@favware/npm-deprecate@1.0.7':
     resolution: {integrity: sha512-rCQdip+YfML29gzhSuXwZsJI5BwWp4uhHQZwDOR0DuzUrF+HXcmt7QWRzyUeseDqQKWnptRgmdpnrkm/qPUCbw==}
     engines: {node: '>=16'}
@@ -248,10 +221,6 @@ packages:
 
   '@sapphire/fetch@2.4.2':
     resolution: {integrity: sha512-aLZJ+ij3vAkHH6JlCbkT7Nj0dNLFdOEv0m1apNPFtUzHpaFdFeayYjLVfsY1JFVssvzjVr4x+mQTQ+XQIqraSg==}
-    engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
-
-  '@sapphire/result@2.6.6':
-    resolution: {integrity: sha512-QCjj7X/QlY0QUCeAaZQmnrsMH/b2BMQYee3F1Y5iF17JagUQqO3KZlG7vfXWQU3SRAJX5OgZZynBjixUH+nNGg==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
 
   '@sapphire/utilities@3.17.0':
@@ -474,10 +443,6 @@ packages:
   colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
 
-  commander@12.1.0:
-    resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
-    engines: {node: '>=18'}
-
   commander@9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
@@ -500,10 +465,6 @@ packages:
     resolution: {integrity: sha512-NKXYmMR/Hr1DevQegFB4MwfM5Vv0m4UIxKZTTYuD98lpTknaZlSRrDOG4X7wIXpGkfsYxZTghUN+Qq+T0YQI7w==}
     engines: {node: '>=16'}
 
-  conventional-changelog-preset-loader@5.0.0:
-    resolution: {integrity: sha512-SetDSntXLk8Jh1NOAl1Gu5uLiCNSYenB5tm0YVeZKePRIgDW9lQImromTwLa3c/Gae298tsgOM+/CYT9XAl0NA==}
-    engines: {node: '>=18'}
-
   conventional-changelog-writer@8.0.0:
     resolution: {integrity: sha512-TQcoYGRatlAnT2qEWDON/XSfnVG38JzA7E0wcGScu7RElQBkg9WWgZd1peCWFcWDh1xfb2CfsrcvOn1bbSzztA==}
     engines: {node: '>=18'}
@@ -520,11 +481,6 @@ packages:
 
   conventional-commits-parser@6.0.0:
     resolution: {integrity: sha512-TbsINLp48XeMXR8EvGjTnKGsZqBemisPoyWESlpRyR8lif0lcwzqz+NMtYSj1ooF/WYjSuu7wX0CtdeeMEQAmA==}
-    engines: {node: '>=18'}
-    hasBin: true
-
-  conventional-recommended-bump@10.0.0:
-    resolution: {integrity: sha512-RK/fUnc2btot0oEVtrj3p2doImDSs7iiz/bftFCDzels0Qs1mxLghp+DFHMaOC0qiCI6sWzlTDyBFSYuot6pRA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -727,41 +683,6 @@ packages:
   get-stream@9.0.1:
     resolution: {integrity: sha512-kVCxPF3vQM/N0B1PmoqVUqgHP+EeVjmZSQn+1oCRPxd2P21P2F19lIgbR3HBosbB1PUhOAoctJnfEn2GbN2eZA==}
     engines: {node: '>=18'}
-
-  git-cliff-darwin-arm64@2.6.1:
-    resolution: {integrity: sha512-uzLlHGXgOf6gzBaloWdfBCfqQFKTcitT65IgtdH1mEX03SLgRFJUhlw4tYbTXVwdPgfWSoP1LGO+b+D4/s8X9g==}
-    cpu: [arm64]
-    os: [darwin]
-
-  git-cliff-darwin-x64@2.6.1:
-    resolution: {integrity: sha512-sx8ppi6Lb0rd96gT6GBKtZlssCm1GbpNsI+vUO1quMyRMSpfI/6TtIQNiLO59M2LNqzGXemC7ULyX0ENAh9QWA==}
-    cpu: [x64]
-    os: [darwin]
-
-  git-cliff-linux-arm64@2.6.1:
-    resolution: {integrity: sha512-T2Y7K4kBdGyD5GIZGYRLgbl0uRYVyBhWfQYj8emnt1XSvF/XaLGhi6hNPJuNCB+394HuhMtb2vV3G3S4uTumxg==}
-    cpu: [arm64]
-    os: [linux]
-
-  git-cliff-linux-x64@2.6.1:
-    resolution: {integrity: sha512-4Y+kEM8JYT7HPgt++DEaqWW/SDxJ9iotork15sTP3fOiRMZi8p58ifjHEfPYVUup/hLpTmH2aiX72HNKa4gwRA==}
-    cpu: [x64]
-    os: [linux]
-
-  git-cliff-windows-arm64@2.6.1:
-    resolution: {integrity: sha512-6xx3AWYeJ00Y/KZb78j9QX0sG+mMav9q/FCexuf89aTs5QjGJfXWtEB7DijvH/m4FDYqVjWcXyt9+ST9eBx0eg==}
-    cpu: [arm64]
-    os: [win32]
-
-  git-cliff-windows-x64@2.6.1:
-    resolution: {integrity: sha512-hRsOv0kVU/cKt9rglWYPuv84ZI1MflhhzQrycz99xF7heGbob4RRgcuN0JXnYPf3q8ATnMgsVlMccaIRXuJFGg==}
-    cpu: [x64]
-    os: [win32]
-
-  git-cliff@2.6.1:
-    resolution: {integrity: sha512-dxquXEx+dRWbggtxQzH2GpgCr6F+HjuY/jZA5QCc1AdvWfq010BxlRElrH7mgS2fHvvybY9gSw7qQEBk3tSM4Q==}
-    engines: {node: '>=18.19 || >=20.6 || >=21'}
-    hasBin: true
 
   git-log-parser@1.2.1:
     resolution: {integrity: sha512-PI+sPDvHXNPl5WNOErAK05s3j0lgwUzMN6o8cyQrDaKfT3qd7TmNJKeXX+SknI5I0QhG5fVPAEwSY4tRGDtYoQ==}
@@ -1535,10 +1456,6 @@ packages:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
 
-  smol-toml@1.3.0:
-    resolution: {integrity: sha512-tWpi2TsODPScmi48b/OQZGi2lgUmBCHy6SZrhi/FdnnHiU1GwebbCfuQuxsC3nHaLwtYeJGPrDZDIeodDOc4pA==}
-    engines: {node: '>= 18'}
-
   socks-proxy-agent@7.0.0:
     resolution: {integrity: sha512-Fgl0YPZ902wEsAyiQ+idGd1A7rSFx/ayC1CQVMw5P+EQx2V0SgpGtf6OKFhVjPflPUl9YMmEOnmfjCdMUsygww==}
     engines: {node: '>= 10'}
@@ -1937,35 +1854,6 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.0
       chalk: 5.3.0
 
-  '@conventional-changelog/git-client@1.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.0.0)':
-    dependencies:
-      '@types/semver': 7.5.8
-      semver: 7.6.3
-    optionalDependencies:
-      conventional-commits-filter: 5.0.0
-      conventional-commits-parser: 6.0.0
-
-  '@favware/cliff-jumper@4.1.0':
-    dependencies:
-      '@favware/colorette-spinner': 1.0.1
-      '@octokit/auth-token': 5.1.1
-      '@octokit/core': 6.1.2
-      '@octokit/plugin-retry': 7.1.2(@octokit/core@6.1.2)
-      '@sapphire/result': 2.6.6
-      '@sapphire/utilities': 3.17.0
-      colorette: 2.0.20
-      commander: 12.1.0
-      conventional-recommended-bump: 10.0.0
-      execa: 9.4.1
-      git-cliff: 2.6.1
-      js-yaml: 4.1.0
-      semver: 7.6.3
-      smol-toml: 1.3.0
-
-  '@favware/colorette-spinner@1.0.1':
-    dependencies:
-      colorette: 2.0.20
-
   '@favware/npm-deprecate@1.0.7(encoding@0.1.13)':
     dependencies:
       '@sapphire/fetch': 2.4.2(encoding@0.1.13)
@@ -2083,8 +1971,6 @@ snapshots:
       cross-fetch: 4.0.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
-
-  '@sapphire/result@2.6.6': {}
 
   '@sapphire/utilities@3.17.0': {}
 
@@ -2350,8 +2236,6 @@ snapshots:
 
   colorette@2.0.20: {}
 
-  commander@12.1.0: {}
-
   commander@9.5.0: {}
 
   compare-func@2.0.0:
@@ -2376,8 +2260,6 @@ snapshots:
     dependencies:
       compare-func: 2.0.0
 
-  conventional-changelog-preset-loader@5.0.0: {}
-
   conventional-changelog-writer@8.0.0:
     dependencies:
       '@types/semver': 7.5.8
@@ -2397,14 +2279,6 @@ snapshots:
 
   conventional-commits-parser@6.0.0:
     dependencies:
-      meow: 13.2.0
-
-  conventional-recommended-bump@10.0.0:
-    dependencies:
-      '@conventional-changelog/git-client': 1.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.0.0)
-      conventional-changelog-preset-loader: 5.0.0
-      conventional-commits-filter: 5.0.0
-      conventional-commits-parser: 6.0.0
       meow: 13.2.0
 
   convert-hrtime@5.0.0: {}
@@ -2607,35 +2481,6 @@ snapshots:
     dependencies:
       '@sec-ant/readable-stream': 0.4.1
       is-stream: 4.0.1
-
-  git-cliff-darwin-arm64@2.6.1:
-    optional: true
-
-  git-cliff-darwin-x64@2.6.1:
-    optional: true
-
-  git-cliff-linux-arm64@2.6.1:
-    optional: true
-
-  git-cliff-linux-x64@2.6.1:
-    optional: true
-
-  git-cliff-windows-arm64@2.6.1:
-    optional: true
-
-  git-cliff-windows-x64@2.6.1:
-    optional: true
-
-  git-cliff@2.6.1:
-    dependencies:
-      execa: 8.0.1
-    optionalDependencies:
-      git-cliff-darwin-arm64: 2.6.1
-      git-cliff-darwin-x64: 2.6.1
-      git-cliff-linux-arm64: 2.6.1
-      git-cliff-linux-x64: 2.6.1
-      git-cliff-windows-arm64: 2.6.1
-      git-cliff-windows-x64: 2.6.1
 
   git-log-parser@1.2.1:
     dependencies:
@@ -3322,8 +3167,6 @@ snapshots:
   slash@5.1.0: {}
 
   smart-buffer@4.2.0: {}
-
-  smol-toml@1.3.0: {}
 
   socks-proxy-agent@7.0.0:
     dependencies:
