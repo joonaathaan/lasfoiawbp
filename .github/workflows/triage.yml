@@ -26,11 +26,7 @@ jobs:
           node --version
           pnpm --version
           pnpm dlx commitlint --version
-      - name: Install commitlint
-        run: |
-          pnpm add conventional-changelog-conventionalcommits
-          pnpm add commitlint@latest
-
+          
       - name: Validate current commit (last commit) with commitlint
         if: github.event_name == 'push'
         run: pnpm dlx commitlint --last --verbose
