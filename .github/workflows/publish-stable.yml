@@ -15,7 +15,9 @@ jobs:
             folder: '.'
 
     runs-on: ubuntu-latest
-
+    permissions:
+      id-token: write
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -42,7 +44,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Provided by GitHub Actions
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
         run: |
-          git remote set-url origin "https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/${{ github.repository }}.git"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           pnpm dlx semantic-release
