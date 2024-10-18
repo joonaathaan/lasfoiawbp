@@ -16,17 +16,9 @@
     "url": "https://github.com/joonaathaan/lasfoiawbp/issues"
   },
   "homepage": "https://github.com/joonaathaan/lasfoiawbp#readme",
-  "scripts": {
-    "build": "echo 'Build step skipped'"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@favware/npm-deprecate": "^1.0.7",
-    "@semantic-release/changelog": "^6.0.3",
-    "semantic-release": "^24.1.2"
-  },
   "publishConfig": {
     "access": "public",
     "provenance": true

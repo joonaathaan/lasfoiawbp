@@ -20,6 +20,8 @@
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0"
+    "@commitlint/config-conventional": "^19.5.0",
+    "@favware/npm-deprecate": "^1.0.7",
+    "lerna": "^8.1.8"
   }
 }
