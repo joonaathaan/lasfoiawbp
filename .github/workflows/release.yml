@@ -48,11 +48,11 @@ jobs:
         run: |
           cd ${{ matrix.folder }}
           if [[ "${{ github.ref_name }}" == "stable" ]]; then
-            pnpm dlx cliff-jumper \
+            pnpm dlx @favware/cliff-jumper \
             --name "${{ matrix.package }}" \
             --package-path "${{ matrix.folder }}"
           else
-            pnpm dlx cliff-jumper \
+            pnpm dlx @favware/cliff-jumper \
             --name "${{ matrix.package }}" \
             --package-path "${{ matrix.folder }}"
             --preid dev
