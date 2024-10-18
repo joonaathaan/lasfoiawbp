@@ -47,6 +47,8 @@ jobs:
         id: release
         run: |
           cd ${{ matrix.folder }}
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           if [[ "${{ github.ref_name }}" == "stable" ]]; then
             pnpm dlx @favware/cliff-jumper \
             --name "${{ matrix.package }}" \
@@ -60,13 +62,3 @@ jobs:
           pnpm publish --provenance --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-
-      - name: Configure git, commit and push!
-        id: commmit
-        if: steps.release.outcome == 'success'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "chore: release ${{ matrix.package }}@$(pnpm version --json | jq -r '.${{ matrix.package }}') [skip ci]" || echo "No changes to commit"
-          git push
