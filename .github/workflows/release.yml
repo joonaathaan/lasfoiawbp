@@ -61,10 +61,12 @@ jobs:
           --conventional-commits \
           --conventional-prerelease \
           --message "chore(release): publish dev" \
-          --dist-tag dev \
+          --no-changelog \
           --preid dev \
           --yes
-          pnpm lerna publish from-package --yes
+          pnpm lerna publish from-package \
+          --dist-tag dev \
+          --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
         
