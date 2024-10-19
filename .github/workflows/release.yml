@@ -44,6 +44,12 @@ jobs:
       - name: Publish stable release
         if: ${{ github.ref_name }} == 'stable'
         run: |
+          if [ "$GITHUB_REF_NAME" == "stable" ]; then
+            echo "The branch is stable"
+          else
+            echo "The branch is not stable"
+          fi
+          echo ${{ github.ref_name }} 
           pnpm lerna version --conventional-commits --conventional-graduate --amend --create-release github --yes
           pnpm lerna publish from-package --yes
         env:
@@ -52,6 +58,12 @@ jobs:
       - name: Publish devlopement release
         if: ${{ github.ref_name }} != 'stable'
         run: |
+         if [ "$GITHUB_REF_NAME" == "stable" ]; then
+            echo "The branch is stable"
+          else
+            echo "The branch is not stable"
+          fi
+          echo ${{ github.ref_name }} 
           pnpm lerna version --conventional-commits --conventional-prerelease --amend --preid dev --yes
           pnpm lerna publish from-package --yes
         env:
