@@ -1,8 +1,12 @@
 {
-  "name": "lasfoiawbp",
-  "version": "1.2.0",
+  "name": "@lasfoiawbp/test2",
+  "version": "0.2.1",
   "description": "",
-  "private": true,
+  "main": "index.js",
+  "exports": "./index.js",
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joonaathaan/lasfoiawbp.git"
@@ -12,16 +16,15 @@
     "url": "https://github.com/joonaathaan/lasfoiawbp/issues"
   },
   "homepage": "https://github.com/joonaathaan/lasfoiawbp#readme",
-  "scripts": {
-    "build": "echo 'Build step skipped'"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@favware/npm-deprecate": "^1.0.7",
-    "lerna": "^8.1.8"
+  "dependencies": {
+    "@lasfoiawbp/test1": "workspace:^"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }

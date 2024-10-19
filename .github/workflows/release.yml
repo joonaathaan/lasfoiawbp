@@ -1,0 +1,69 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+      - stable
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org/'
+          always-auth: true
+          cache: pnpm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Project
+        run: pnpm lerna run build
+
+      - name: Set git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Publish stable release
+        if: github.ref_name == 'stable'
+        run: |
+          pnpm lerna version \
+          --conventional-commits \
+          --message "chore(release): publish stable" \
+          --create-release github \
+          --yes
+          pnpm lerna publish from-package --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish devlopement release
+        if: github.ref_name == 'main'
+        run: |
+          pnpm lerna version \
+          --conventional-commits \
+          --conventional-prerelease \
+          --message "chore(release): publish dev" \
+          --preid dev \
+          --yes
+          pnpm lerna publish from-package --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+        
