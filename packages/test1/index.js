@@ -1,1 +1,1 @@
-module.exports = { test: 2233 };
+module.exports = { test: 2233 }
