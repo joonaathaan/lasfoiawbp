@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/joonaathaan/lasfoiawbp/compare/@lasfoiawbp/test1@0.2.0...@lasfoiawbp/test1@0.2.1) (2024-10-19)
+
+
+### Bug Fixes
+
+* adjust number ([54820e2](https://github.com/joonaathaan/lasfoiawbp/commit/54820e21f9aa5ee9776c8c869bd3cdd6eb6c6fbe))
+
+
+
+
+
 # 0.2.0 (2024-10-19)
 
 
