@@ -61,6 +61,7 @@ jobs:
           --conventional-commits \
           --conventional-prerelease \
           --message "chore(release): publish dev" \
+          --dist-tag dev \
           --preid dev \
           --yes
           pnpm lerna publish from-package --yes
