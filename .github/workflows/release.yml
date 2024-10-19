@@ -48,7 +48,7 @@ jobs:
           --conventional-commits \
           --message "chore(release): publish stable" \
           --create-release github \
-          --yes \
+          --yes
           pnpm lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
