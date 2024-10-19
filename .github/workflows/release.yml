@@ -49,7 +49,8 @@ jobs:
           --conventional-graduate \
           --message "chore(release): publish stable" \
           --create-release github \
-          --yes
+          --yes \
+          --verbose
           pnpm lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
