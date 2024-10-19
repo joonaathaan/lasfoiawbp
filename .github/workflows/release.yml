@@ -40,13 +40,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git status
-          git log --oneline
       
       - name: Publish stable release
         if: github.ref_name == 'stable'
         run: |
-          pnpm lerna version --conventional-commits --conventional-graduate --amend --create-release github --yes
+          pnpm lerna version --conventional-commits --conventional-graduate --no-push --create-release github --yes
           pnpm lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
@@ -54,15 +52,13 @@ jobs:
       - name: Publish devlopement release
         if: github.ref_name != 'stable'
         run: |
-          pnpm lerna version --conventional-commits --conventional-prerelease --amend --preid dev --yes
+          pnpm lerna version --conventional-commits --conventional-prerelease --no-push --preid dev --yes
           pnpm lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       
       - name: Set up git user, commit and push!
         run: |
-          git status
-          git log --oneline
           git add .
           git commit -m "chore: publish packages [skip ci]" || echo "No changes to commit"
           git push
