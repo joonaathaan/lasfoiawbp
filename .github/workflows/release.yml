@@ -46,18 +46,16 @@ jobs:
         run: |
           pnpm lerna version \
           --conventional-commits \
-          --conventional-graduate \
           --message "chore(release): publish stable" \
           --create-release github \
           --yes \
-          --verbose
           pnpm lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish devlopement release
-        if: github.ref_name != 'stable'
+        if: github.ref_name == 'main'
         run: |
           pnpm lerna version \
           --conventional-commits \
