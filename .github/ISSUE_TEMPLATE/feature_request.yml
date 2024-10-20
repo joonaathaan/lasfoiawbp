@@ -47,4 +47,3 @@ body:
       description: Would you be willing to work on implementing this feature?
       options:
         - label: Yes, I can contribute to this feature.
-          value: no
