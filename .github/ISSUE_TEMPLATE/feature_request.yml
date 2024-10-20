@@ -8,9 +8,9 @@ body:
       label: Feature Description
       description: Provide a detailed description of the feature you would like to see.
       placeholder: |
-        - **Overview:** Briefly describe the feature.
-        - **Functionality:** Explain how the feature should work.
-        - **Use Cases:** Outline scenarios where this feature would be beneficial.
+        - Briefly describe the feature.
+        - Explain how the feature should work.
+        - Outline scenarios where this feature would be beneficial.
     validations:
       required: true
 
@@ -32,11 +32,9 @@ body:
       label: Additional Details
       description: Share any ideas, suggestions, or extra information related to the feature.
       placeholder: |
-        - **Possible Implementation:** Describe how this feature could be implemented.
-        - **Dependencies:** Mention any dependencies or related features.
-        - **Potential Challenges:** Identify possible obstacles in implementation.
-        - **Additional Information:** Provide any other context or information here.
-        - **Mockups/Diagrams:** Include visual aids if applicable.
+        - Describe how this feature could be implemented.
+        - Mention any dependencies or related features.
+        - Provide any other context or information here.
     validations:
       required: false
 
