@@ -46,6 +46,7 @@ jobs:
         run: |
           pnpm lerna version \
           --conventional-commits \
+          --conventional-graduate \
           --message "chore(release): publish stable" \
           --create-release github \
           --yes
