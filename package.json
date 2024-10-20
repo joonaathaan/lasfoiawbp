@@ -1,8 +1,12 @@
 {
-  "name": "lasfoiawbp",
-  "version": "1.2.0",
+  "name": "@lasfoiawbp/test1",
+  "version": "0.2.4-dev.0",
   "description": "",
-  "private": true,
+  "main": "index.js",
+  "exports": "./index.js",
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joonaathaan/lasfoiawbp.git"
