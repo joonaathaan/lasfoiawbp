@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/joonaathaan/lasfoiawbp/compare/@lasfoiawbp/test2@0.2.2...@lasfoiawbp/test2@0.2.3) (2024-10-20)
+
+**Note:** Version bump only for package @lasfoiawbp/test2
+
+
+
+
+
+## [0.2.2](https://github.com/joonaathaan/lasfoiawbp/compare/@lasfoiawbp/test2@0.2.2-dev.3...@lasfoiawbp/test2@0.2.2) (2024-10-20)
+
+**Note:** Version bump only for package @lasfoiawbp/test2
+
+
+
+
+
 ## [0.2.2-dev.2](https://github.com/joonaathaan/lasfoiawbp/compare/@lasfoiawbp/test2@0.2.2-dev.1...@lasfoiawbp/test2@0.2.2-dev.2) (2024-10-19)
 
 **Note:** Version bump only for package @lasfoiawbp/test2
