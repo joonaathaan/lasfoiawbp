@@ -9,10 +9,9 @@ body:
       description: Provide a comprehensive explanation of the issue.
       placeholder: |
         Steps to reproduce using the code sample below:
-        1. Perform action one
-        2. Execute action within the application
-        3. Observe the resulting behavior
-        4. Refer to the error logs provided
+        1. Perform action
+        2. Observe the resulting behavior
+        3. Refer to the error logs provided
     validations:
       required: true
 
@@ -22,9 +21,9 @@ body:
       label: Environment Details
       description: Specify the relevant versions, including your package version, runtime version, operating system, etc.
       placeholder: |
-        - **Node.js:** 20.18.0 (`node --version`)
-        - **TypeScript:** 5.6.3 (`pnpm ls typescript` if applicable)
-        - **Operating System:** macOS Sequoia 15.0.0
+        - Node.js: 20.18.0 (`node --version`)
+        - TypeScript: 5.6.3 (`pnpm ls typescript` if applicable)
+        - Operating System: macOS Sequoia 15.0.0
     validations:
       required: true
 
