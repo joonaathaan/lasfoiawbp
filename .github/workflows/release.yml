@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - stable
+      - dev
 
 jobs:
   publish:
@@ -42,7 +42,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
       
       - name: Publish stable release
-        if: github.ref_name == 'stable'
+        if: github.ref_name == 'main'
         run: |
           pnpm lerna version \
           --conventional-commits \
@@ -56,13 +56,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish devlopement release
-        if: github.ref_name == 'main'
+        if: github.ref_name == 'dev'
         run: |
           pnpm lerna version \
           --conventional-commits \
           --conventional-prerelease \
           --message "chore(release): publish dev" \
           --no-changelog \
+          --no-git-tag-version \
           --preid dev \
           --yes
           pnpm lerna publish from-package \

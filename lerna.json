@@ -10,7 +10,7 @@
       "npmClient": "pnpm",
       "allowBranch": [
         "main",
-        "stable"
+        "dev"
       ],
       "registry": "https://registry.npmjs.org/"
     },
